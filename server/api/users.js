@@ -1,4 +1,4 @@
-const router = require('express').Router;
+const router = require('express').Router();
 
 //this is for /api/users
 router.get('/', async (req, res, next) => {
