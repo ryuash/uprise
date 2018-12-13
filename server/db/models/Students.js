@@ -1,6 +1,6 @@
 //this is just an example for future reference;
 
-const db = require('./database');
+const db = require('../db');
 const Sequelize = require('sequelize');
 
 const Students = db.define('students', {
