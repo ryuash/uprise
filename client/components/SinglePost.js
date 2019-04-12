@@ -5,6 +5,12 @@ import { getSinglePostThunk } from '../store/postReducer';
 class SinglePost extends React.Component {
     constructor() {
         super();
+        this.handleGoBack = this.handleGoBack.bind(this);
+    }
+
+    handleGoBack() {
+        console.log('hit go back');
+        this.props.history.goBack();
     }
 
     componentDidMount() {
@@ -20,7 +26,13 @@ class SinglePost extends React.Component {
     render() {
         console.log(this.props, 'props');
         return (
-            <h1>hit that single post</h1>
+            <div>
+                <h3 onClick={() => this.handleGoBack()}>go back</h3>
+                <h1>{this.props.singlePost.title}</h1>
+                <p>By {this.props.singlePost.username}</p>
+                <p>{this.props.singlePost.id}</p>
+                <p>{this.props.singlePost.body}</p>
+            </div>
         );
     }
 }
