@@ -2,8 +2,6 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const path = require('path');
-//database syncing stuff
-const { db } = require('./db');
 
 //middleware
 app.use(morgan('dev'));
@@ -29,9 +27,6 @@ app.use((err, req, res, next) => {
 const port = process.env.PORT || 3000;
 const init = async () => {
     try {
-        // models.db.sync({force: true});
-        await db.sync();
-        console.log('db successfully winged it');
         app.listen(port, () => {
             console.log(`Winging it up on port ${port}`);
             console.log(`localhost:${port}`);

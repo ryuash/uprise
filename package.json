@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run start-server & npm run build-watch",
     "start-dev": "webpack -w & nodemon ./server"
   },
   "author": "",
@@ -23,7 +22,7 @@
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "sequelize": "^4.41.2"
+    "sequelize": "^5.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.2.0",
