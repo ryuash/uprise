@@ -1,12 +1,12 @@
 body{
     margin: 0;
     box-sizing: border-box;
+    background:green;
 }
 
 #allPostContainer{
     width:100%;
     height:100vh;
-    background:green;
     display:flex;
     align-items: center;
     justify-content: center;

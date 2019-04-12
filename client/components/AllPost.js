@@ -31,9 +31,10 @@ class AllPost extends React.Component {
         super();
         this.handleClick = this.handleClick.bind(this);
     }
-    handleClick(e) {
-        this.props.history.push(`/post/${e}`);
+    handleClick(id) {
+        this.props.history.push(`/post/${id}/`);
     }
+
     render() {
         const { classes } = this.props;
         return (
@@ -72,4 +73,11 @@ const mapState = state => {
         allUser: state.User.allUser
     };
 };
+
+// const mapDispatch = dispatch => {
+//     return {
+//         getSinglePostThunk: (id) => dispatch(getSinglePostThunk(id))
+//     };
+// };
+
 export default connect(mapState)(withStyles(styles)(AllPost));

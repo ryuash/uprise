@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import { getAllPostThunk } from '../store/postReducer';
 import { getAllUserThunk } from '../store/userReducer';
 
 import AllPost from './AllPost';
+import SinglePost from './SinglePost';
 
 class Main extends React.Component {
     componentDidMount() {
@@ -13,7 +14,10 @@ class Main extends React.Component {
     }
     render() {
         return (
-            <Route exact path="/" component={AllPost} />
+            <Switch>
+                <Route exact path="/" component={AllPost} />
+                <Route path="/post/:id" component={SinglePost} />
+            </Switch>
         );
     }
 }
@@ -31,4 +35,4 @@ const mapDispatch = dispatch => {
         getAllUserThunk: () => dispatch(getAllUserThunk())
     };
 };
-export default connect(null, mapDispatch)(Main);
+export default withRouter(connect(null, mapDispatch)(Main));

@@ -9,6 +9,7 @@ import userReducer from './userReducer';
 //actions
 export const GET_ALL_POST = 'GET_ALL_POST';
 export const GET_ALL_USER = 'GET_ALL_USER';
+export const GET_SINGLE_POST = 'GET_SINGLE_POST';
 
 
 const reducer = combineReducers({
