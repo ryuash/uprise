@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -10,15 +11,24 @@ import Paper from '@material-ui/core/Paper';
 
 const styles = theme => ({
     root: {
-        width: '50%',
         maxHeight: '50vh',
-        marginTop: theme.spacing.unit * 3,
         overflowY: 'auto',
+        marginBottom: '2em',
+        [theme.breakpoints.down('sm')]: {
+            width: '90%',
+        },
+        [theme.breakpoints.up('md')]: {
+            width: '50%',
+        },
+        [theme.breakpoints.up('lg')]: {
+            width: '50%',
+        }
+
     },
     tableRow: {
         '&:hover': {
-            background: 'pink',
-            cursor: 'pointer'
+            background: 'rgb(88, 157, 226)',
+            cursor: 'pointer',
         }
     },
     table: {
@@ -38,7 +48,7 @@ class AllPost extends React.Component {
     render() {
         const { classes } = this.props;
         return (
-            <div id="allPostContainer">
+            <div id="all-post-container">
                 <Paper className={classes.root}>
                     <Table className={classes.table}>
                         <TableHead>

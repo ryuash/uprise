@@ -24,15 +24,17 @@ class SinglePost extends React.Component {
     }
 
     render() {
-        console.log(this.props, 'props');
         return (
-            <div>
-                <h3 onClick={() => this.handleGoBack()}>go back</h3>
-                <h1>{this.props.singlePost.title}</h1>
-                <p>By {this.props.singlePost.username}</p>
-                <p>{this.props.singlePost.id}</p>
-                <p>{this.props.singlePost.body}</p>
-            </div>
+            <React.Fragment>
+                <i id="go-back" onClick={() => this.handleGoBack()} className="fas fa-arrow-left" />
+                <div id="single-post-container">
+                    <div id="single-post-details">
+                        <h1>{this.props.singlePost.title}</h1>
+                        <p>By : {this.props.singlePost.username} || userId : {this.props.singlePost.userId} || postId : {this.props.singlePost.id}</p>
+                        <p>{this.props.singlePost.body}</p>
+                    </div>
+                </div>
+            </React.Fragment>
         );
     }
 }
