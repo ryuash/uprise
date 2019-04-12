@@ -5,11 +5,12 @@ import { Provider } from 'react-redux';
 import store from './store';
 import './styles/index.css';
 
+import Main from './components/Main';
+
 ReactDOM.render(
     <Provider store={store}>
         <Router>
-            {/* <Main /> */}
-            <h1>Hello world</h1>
+            <Main />
         </Router>
     </Provider>,
     document.getElementById('app')

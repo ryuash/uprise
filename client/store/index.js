@@ -2,14 +2,18 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { createLogger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-//change or delete this reducer later
-import allFilesReducer from './allFilesReducer';
 
+//reducers
+import postReducer from './postReducer';
+import userReducer from './userReducer';
 //actions
-export const GET_ALL_FILES = 'GET_ALL_FILES';
+export const GET_ALL_POST = 'GET_ALL_POST';
+export const GET_ALL_USER = 'GET_ALL_USER';
+
 
 const reducer = combineReducers({
-    allFiles: allFilesReducer
+    Post: postReducer,
+    User: userReducer
 });
 
 const middleware = composeWithDevTools(
