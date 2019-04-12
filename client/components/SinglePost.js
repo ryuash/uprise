@@ -9,8 +9,8 @@ class SinglePost extends React.Component {
     }
 
     handleGoBack() {
-        console.log('hit go back');
-        this.props.history.goBack();
+        this.props.history.push('/');
+
     }
 
     componentDidMount() {
