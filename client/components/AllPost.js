@@ -31,9 +31,6 @@ const styles = theme => ({
             cursor: 'pointer',
         }
     },
-    table: {
-        // minWidth: 700,
-    },
 });
 
 class AllPost extends React.Component {
@@ -65,6 +62,7 @@ class AllPost extends React.Component {
                                         {x.id}
                                     </TableCell>
                                     <TableCell align="left">{x.title}</TableCell>
+                                    {/* Getting the username using this method only works because I know exactly where the user is basd on the data. Would not be ideal for production */}
                                     {this.props.allUser.length && <TableCell align="left">{this.props.allUser[x.userId - 1].username}</TableCell>}
                                 </TableRow>
                             ))}
@@ -83,11 +81,5 @@ const mapState = state => {
         allUser: state.User.allUser
     };
 };
-
-// const mapDispatch = dispatch => {
-//     return {
-//         getSinglePostThunk: (id) => dispatch(getSinglePostThunk(id))
-//     };
-// };
 
 export default connect(mapState)(withStyles(styles)(AllPost));
