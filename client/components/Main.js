@@ -22,13 +22,6 @@ class Main extends React.Component {
     }
 }
 
-// const mapState = state => {
-//     return {
-//         allPost: state.Post.allPost,
-//         allUser: state.User.allUser
-//     };
-// };
-
 const mapDispatch = dispatch => {
     return {
         getAllPostThunk: () => dispatch(getAllPostThunk()),
